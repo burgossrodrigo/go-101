@@ -78,3 +78,22 @@ func incrementPointer(x *int) {
 }
 ```
 
+Output from main
+
+```bash
+[0 1 2 3 4]
+map[3:triangle 4:square 5:pentagon 6:hexagon]
+index: 0
+element: 0
+index: 1
+element: 1
+index: 2
+element: 2
+index: 3
+element: 3
+index: 4
+element: 4
+4
+{Rodrigo 33 male black}
+8
+```
