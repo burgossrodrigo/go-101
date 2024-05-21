@@ -1,17 +1,26 @@
-# go-101
+package main
 
-Method to declare an slice (abstraction of array)
- 
- ```go
+import (
+	"fmt"
+	"math"
+	"errors"
+)
+
+type person struct {
+	name string
+	age int
+	gender string
+	etnicity string
+}
+
+//array function returns an array of integers
 func array() ([]int) {
 	arr := []int{0,1,2,3,4}
 	return arr
 }
-```
 
-Maps which ressemble `Record` in typescript
 
-```go
+//vertices function returns a map of integers and strings
 func vertices() (map[int]string) {
 	vertices := make(map[int]string)
 
@@ -22,11 +31,8 @@ func vertices() (map[int]string) {
 
 	return vertices
 }
-```
 
-Basic loop
-
-```go
+//loops function loops through the array and prints each element
 func loops() {
 	arr := array()
 	for index, entry := range arr {
@@ -34,11 +40,7 @@ func loops() {
 		fmt.Println("element:", entry)
 	}
 }
-```
 
-Calculating srt
-
-```go
 func sqrt(x float64) (float64, error) {
 	if x < 0 {
 		return 0, errors.New("undefined for negative numbers")
@@ -46,27 +48,12 @@ func sqrt(x float64) (float64, error) {
 
 	return math.Sqrt(x), nil
 }
-```
-
-Structs
-
-```go
-type person struct {
-	name string
-	age int
-	gender string
-	etnicity string
-}
 
 func structHandle() (person) {
 	p := person{name: "Rodrigo", age: 33, gender: "male", etnicity: "black"}
 	return p
 }
-```
 
-Pointer
-
-```go
 func pointer() (int) {
 	i := 7
 	incrementPointer(&i)
@@ -76,5 +63,17 @@ func pointer() (int) {
 func incrementPointer(x *int) {
 	*x++
 }
-```
 
+func main() {
+	fmt.Println(array())
+	fmt.Println(vertices())
+	loops()
+	result, err := sqrt(16)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(result)
+	}
+	fmt.Println(structHandle())
+	fmt.Println(pointer())
+}
